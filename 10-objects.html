@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>/*
+        const product = {
+            name: 'socks',
+            price: 1090
+        };
+        console.log(product);
+        console.log(product.name);
+        cosole.log(product.price);
+
+        product.name = 'cotton socks';
+        product.quantity = 20;
+
+        delete product.quantity;
+        */ 
+       const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating:{
+            stars: 4.5,
+            count: 87
+        },
+        fun: function gamefunc(){
+            console.log('function inside object')
+        }
+       };
+       console.log(product2);
+       console.log(product2.name);
+       console.log(product2['delivery-time']);
+       console.log(product2.rating.count);
+       product2.fun();
+
+       // converting Javascript objects to json
+       const jsonObject = JSON.stringify(product2);
+       console.log(jsonObject);
+
+
+       //converting from json to JavaScript Obj
+       JSON.parse(jsonObject)
+
+       /* Local Storage*/
+       //seting data in local storage
+       localStorage.setItem('message', 'hello');
+
+       // retrieving data from local storage
+       localStorage.getItem('message');
+
+       // deleting data from local storage
+       localStorage.removeItem('message');
+    </script>
+    
+</body>
+</html>

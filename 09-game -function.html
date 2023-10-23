@@ -9,9 +9,9 @@
     <h1> Rock Paper Scissors</h1>
     <script>
 
-        function gameFunc() {
+        function gameFunc(playermove) {
             const randomNumber =  Math.random();
-            let computerMove = '';
+            let computerMove = "";
             
 
             if (randomNumber>= 0 && randomNumber<= 1/3 ){
@@ -19,71 +19,65 @@
             }else if (randomNumber>= 1/3 && randomNumber < 2/3){
                 computerMove = 'paper';
                 
-            }else { computerMove = 'Scissors';
+            }else {computerMove = 'Scissors';}
+            
+
+            computerMove;
+
+            let result ='';
+
+
+                if (playermove === 'rock'){
+
+                if (computerMove === 'rock'){
+                    result ='Tie.';
+                } else if (computerMove === 'paper'){
+                    result = 'You lose';
+                }else if (computerMove === 'Scissors'){
+                    result = 'You win';
+                }
             }
 
-            return  computerMove;
-        }
+                if (playermove ==='paper') {
 
-            function resultfunc(value, computerMove, result){
+                if (computerMove === 'rock'){
+                result ='You win.';
+                } else if (computerMove === 'paper'){
+                result = 'Tie';
+                }else if (computerMove === 'Scissors'){
+                result = 'You Lose';
+                }
+
+            }
+
+                if (playermove ==='scissors') {
+
+                if (computerMove === 'rock'){
+                result = 'You Lose.';
+                } else if (computerMove === 'paper'){
+                    result = 'You Win.';
+                }else if (computerMove === 'Scissors'){
+                    result = 'Tie';
+                }
                 
-                const final =`You picked ${value}, computer picked ${computerMove}. ${result}`;
-                return final;
+            }
+                
+                const final =`You picked ${playermove}, computer picked ${computerMove}. ${result}`;
+                return alert(final);
             }
         
     </script>
-   
-    <button onclick="
-        const computerMove = gameFunc();
-        
+        <button onclick="
+        gameFunc('rock')
+        "> Rock </button>
 
-        let result ='';
+        <button onclick="
+        gameFunc('paper')
+        "> Papper </button>
 
-        if (computerMove === 'rock'){
-            result ='Tie.';
-        } else if (computerMove === 'paper'){
-            result = 'You lose';
-        }else if (computerMove === 'Scissors'){
-            result = 'You win';
-        }
-
-       alert(resultfunc('rock',computerMove, result ));
-    "> Rock </button>
-
-
-    <button onclick="
-        const computerMove = gameFunc();
-
-        let result ='';
-        
-        if (computerMove === 'rock'){
-            result ='You win.';
-        } else if (computerMove === 'paper'){
-            result = 'Tie';
-        }else if (computerMove === 'Scissors'){
-            result = 'You Lose';
-        }
-
-        alert(resultfunc('paper',computerMove, result));
-    "> Paper </button>
-
-
-
-    <button onclick="
-        const computerMove = gameFunc();
-        let result ='';
-
-        if (computerMove === 'rock'){
-            result = 'You Lose.';
-        } else if (computerMove === 'paper'){
-            result = 'You Win.';
-        }else if (computerMove === 'Scissors'){
-            result = 'Tie';
-        }
-
-        alert(resultfunc('Scissors' computerMove, result));
-    
-    "> Scissors </button>
+        <button onclick="
+        gameFunc('scissors')
+        ">Scissors</button>
     
     <script>
         function func1(){
