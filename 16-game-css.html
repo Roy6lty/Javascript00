@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Papaer sissors</title>
+    <link rel='stylesheet'  href="styles/16-game.css">
+</head>
+<body>
+    <p class="title"> Rock Paper Scissors</p>
+    <script src="js/16-game-css.js"></script>
+
+        <button onclick="
+        gameFunc('rock')
+        " class="move-button"> <img src="images/rock.jpg" class="move-icon"> </button>
+
+        <button onclick="
+        gameFunc('paper')
+        "  class="move-button">  <img src="images/paper.jpg" class="move-icon"> </button>
+
+        <button onclick="
+        gameFunc('scissors')
+        "  class="move-button"> <img src="images/scissors.jpg" class="move-icon"></button>
+
+
+        <p class="js-result"></p>
+        <p class="js-move"></p>
+        <p class="js-score"></p>
+
+        <button onclick="
+            score.wins = 0;
+            score.losses = 0;
+            score.ties = 0;
+            localStorage.removeItem('score');
+            updateElement()
+        ">Reset Score</button>
+
+        <button onclick="
+        alert(` Wins$ {score.wins}, Loses ${score.losses}, Ties ${score.ties}`);
+        "> score</button>
+    
+    <script>
+        function func1(){
+            console.log('hello');
+            console.log(2 + 2);
+            let score1 = {
+                wins:0
+            }
+            console.log(score1);
+        }
+
+        func1();
+        getScore();
+    </script>
+</body>
+</html>

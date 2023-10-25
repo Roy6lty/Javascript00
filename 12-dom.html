@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+
+   <button>Hello</button>
+   <button class="js-button">Second Button</button>
+  
+
+   <script>
+   /*
+    document.body.innerHTML = "hello"
+    document.title = "Good Job"
+    */
+
+    // get any element from the page
+
+   document.querySelector('button')
+
+   console.log(document.title);
+   document.title ='changed';
+
+   console.log(document.body);
+   console.log(typeof document.body);
+
+   console.log(document.body.innerHTML);
+   //document.body.innerHTML = '<button>Good Job</button>';
+
+   document.querySelector('button');
+
+   // change in inner html of a javascript object
+   document.querySelector('button').innerHTML = 'changed';
+
+   const buttonelement = document.querySelector('.js-button');
+   buttonelement .innerHTML = 'changed again';
+
+   
+   </script> 
+</body>
+</html>

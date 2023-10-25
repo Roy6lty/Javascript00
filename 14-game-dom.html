@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Papaer sissors</title>
+    <title>Document</title>
 </head>
 <body>
     <h1> Rock Paper Scissors</h1>
@@ -11,12 +11,18 @@
         /* object is initalized as th scripts run*/
         // get score from local storage and parse into object
         // using default operator
+
+        
         let score = JSON.parse(localStorage.getItem('score')) || {
                 wins: 0,
                 losses: 0,
                 ties: 0
             };
-       
+
+            function updateElement() {
+                 document.querySelector('.js-score')
+                .innerHTML =`Wins ${score.wins}  Lossess ${score.losses}  Ties: ${score.ties}`;
+            }
         
 
         function gameFunc(playermove) {
@@ -83,6 +89,14 @@
             const final =`You picked ${playermove}, computer picked ${computerMove} ${result} 
             Wins ${score.wins}  Lossess ${score.losses}  Ties: ${score.ties}`;
 
+            updateElement()
+
+            document.querySelector('.js-result').
+                innerHTML = result;
+
+            document.querySelector('.js-move').
+                innerHTML = `You ${playermove} - ${computerMove}`;
+
             return alert(final);
         }
         
@@ -100,12 +114,17 @@
         gameFunc('scissors')
         ">Scissors</button>
 
+
+        <p class="js-result"></p>
+        <p class="js-move"></p>
+        <p class="js-score"></p>
+
         <button onclick="
             score.wins = 0;
             score.losses = 0;
             score.ties = 0;
             localStorage.removeItem('score');
-            alert('Score Reset')
+            updateElement()
         ">Reset Score</button>
 
         <button onclick="
